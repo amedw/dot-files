@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "Setup Zsh"
+CURRENT_DIR=`pwd`
+cd `dirname $0`
+SCRIPT_PATH=`pwd -P`
+
+source $SCRIPT_PATH/../utils
+
+heading "Setting up zsh with prezto"
+
+if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+  info "Cloning prezto repository"
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+fi
+
+link $SCRIPT_PATH/zlogin $HOME/.zlogin
+link $SCRIPT_PATH/zlogout $HOME/.zlogout
+link $SCRIPT_PATH/zpreztorc $HOME/.zpreztorc
+link $SCRIPT_PATH/zprofile $HOME/.zprofile
+link $SCRIPT_PATH/zshenv $HOME/.zshenv
+link $SCRIPT_PATH/zshrc $HOME/.zshrc
+
+touch $HOME/.zshrc.local
+
+cd $CURRENT_DIR
