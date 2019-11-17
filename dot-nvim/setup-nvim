@@ -1,0 +1,25 @@
+#!/bin/bash
+CURRENT_DIR=`pwd`
+cd `dirname $0`
+SCRIPT_PATH=`pwd -P`
+
+source $SCRIPT_PATH/../utils
+
+heading "Setting up NeoVim"
+info "Setting up vim-plug"
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+nvim_config=$HOME/.config/nvim
+
+mkdir -p $nvim_config/config
+
+link $SCRIPT_PATH/nvim-init.vim $nvim_config/init.vim
+
+link $SCRIPT_PATH/config/general.vim $nvim_config/config/general.vim
+link $SCRIPT_PATH/config/keys.vim $nvim_config/config/keys.vim
+link $SCRIPT_PATH/config/plugins.vim $nvim_config/config/plugins.vim
+link $SCRIPT_PATH/coc-settings.json $nvim_config/coc-settings.json
+
+touch $nvim_config/config/custom.vim
