@@ -1,0 +1,10 @@
+#!/bin/bash
+CURRENT_DIR=`pwd`
+cd `dirname $0`
+SCRIPT_PATH=`pwd -P`
+
+source $SCRIPT_PATH/../utils
+
+heading "Setting up alacritty"
+
+link $SCRIPT_PATH/alacritty.yml $HOME/.config/alacritty/alacritty.yml
