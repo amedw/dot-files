@@ -1,9 +1,5 @@
-#
-# Executes commands at login pre-zshrc.
-#
-# Authors:
-#   Aaron Edwards <mr.amedw@gmail.com>
-#
+#!/bin/zsh
+
 
 #
 # Browser

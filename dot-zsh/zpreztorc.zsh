@@ -1,9 +1,4 @@
-#
-# Sets Prezto options.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+#!/bin/zsh
 
 #
 # General

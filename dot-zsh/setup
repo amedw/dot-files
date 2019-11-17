@@ -14,13 +14,15 @@ if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
 
-link $SCRIPT_PATH/zlogin $HOME/.zlogin
-link $SCRIPT_PATH/zlogout $HOME/.zlogout
-link $SCRIPT_PATH/zpreztorc $HOME/.zpreztorc
-link $SCRIPT_PATH/zprofile $HOME/.zprofile
-link $SCRIPT_PATH/zshenv $HOME/.zshenv
-link $SCRIPT_PATH/zshrc $HOME/.zshrc
+link $SCRIPT_PATH/zlogin.zsh $HOME/.zlogin
+link $SCRIPT_PATH/zlogout.zsh $HOME/.zlogout
+link $SCRIPT_PATH/zpreztorc.zsh $HOME/.zpreztorc
+link $SCRIPT_PATH/zprofile.zsh $HOME/.zprofile
+link $SCRIPT_PATH/zshenv.zsh $HOME/.zshenv
+link $SCRIPT_PATH/zshrc.zsh $HOME/.zshrc
 
 touch $HOME/.zshrc.local
+
+link $SCRIPT_PATH/p10k.zsh $HOME/.p10k.zsh
 
 cd $CURRENT_DIR
