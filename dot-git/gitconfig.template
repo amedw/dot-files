@@ -1,0 +1,25 @@
+[user]
+  name = AUTHORNAME
+  email = AUTHOREMAIL
+[alias]
+  heir = log --all --graph --decorate --oneline --simplify-by-decoration --date=relative --abbrev-commit --pretty=format:'%Cgreen%h%Creset -%Creset %s%C(yellow)%d %Cblue(%aN, %cr)%Creset'
+  tree = log --all --graph --pretty=format:'%Cgreen%h%Creset -%Creset %s%C(yellow)%d %Cblue(%aN, %cr)%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cgreen%h%Creset -%Creset %s%C(yellow)%d %Cblue(%aN, %cr)%Creset' --abbrev-commit --date=relative
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim
+[apply]
+  whitespace = nowarn
+[mergetool]
+  keepBackup = false
+[diff]
+  tool = vimdiff
+[help]
+  autocorrect = 1
+[push]
+  default = simple

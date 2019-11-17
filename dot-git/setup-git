@@ -1,0 +1,21 @@
+#!/bin/bash
+CURRENT_DIR=`pwd`
+cd `dirname $0`
+SCRIPT_PATH=`pwd -P`
+
+source $SCRIPT_PATH/../utils
+
+heading "Setting up git"
+
+question ' Default git author name:'
+read -e git_authorname
+question ' Default git author email:'
+read -e git_authoremail
+
+sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" $SCRIPT_PATH/gitconfig.template > $SCRIPT_PATH/gitconfig
+
+link $SCRIPT_PATH/gitconfig $HOME/.gitconfig
+
+success "git"
+
+cd $CURRENT_DIR
