@@ -1,0 +1,19 @@
+#!/bin/bash
+CURRENT_DIR=`pwd`
+cd `dirname $0`
+SCRIPT_PATH=`pwd -P`
+
+source $SCRIPT_PATH/../utils
+heading "Setting up tmux"
+
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/gpakosz/.tmux ~/.tmux/settings
+
+
+link $SCRIPT_PATH/tmux.conf.local ~/.tmux.conf
+
+
+success "Tmux setup"
+
+cd $CURRENT_DIR
